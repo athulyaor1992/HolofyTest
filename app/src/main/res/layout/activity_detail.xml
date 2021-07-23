@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+   >
+
+    <!-- A CardView that contains a TextView -->
+    <androidx.cardview.widget.CardView xmlns:card_view="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/card_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_gravity="center"
+        android:layout_margin="8dp"
+        android:transitionName="@string/transition_string"
+        card_view:cardCornerRadius="4dp"
+        >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:orientation="vertical">
+
+
+            <FrameLayout
+                android:id="@+id/playerContainer1"
+                android:layout_width="match_parent"
+                android:layout_height="400dp"
+                android:layout_margin="10dp">
+
+                <com.master.exoplayer.MasterExoPlayer
+                    android:id="@+id/masterExoPlayer1"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent" />
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/image"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:scaleType="centerCrop" />
+
+            </FrameLayout>
+
+            <TextView
+                android:id="@+id/videoName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="8dp"
+                android:background="@android:color/white"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                android:text="Name" />
+
+            <TextView
+                android:id="@+id/videoDesc"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="8dp"
+                android:background="@android:color/white"
+                android:textSize="15sp"
+                android:text="Name" />
+
+        </LinearLayout>
+
+    </androidx.cardview.widget.CardView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
