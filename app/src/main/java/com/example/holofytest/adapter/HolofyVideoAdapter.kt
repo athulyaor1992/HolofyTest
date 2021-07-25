@@ -31,7 +31,6 @@ class HolofyVideoAdapter(
                 masterExoPlayer.url = user.sources[0]
                 masterExoPlayer.imageView = image
 
-
                 var IMG_URL = "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/"
 
                 Glide.with(this)

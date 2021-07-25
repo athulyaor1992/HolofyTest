@@ -4,16 +4,6 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <!-- A CardView that contains a TextView -->
-    <androidx.cardview.widget.CardView xmlns:card_view="http://schemas.android.com/apk/res-auto"
-        android:id="@+id/card_view"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_gravity="center"
-        android:layout_margin="8dp"
-        android:transitionName="@string/transition_string"
-        card_view:cardCornerRadius="4dp"
-        >
 
     <RelativeLayout
         android:layout_width="wrap_content"
@@ -22,12 +12,10 @@
         android:gravity="center_vertical"
         app:layout_constraintHorizontal_bias="0.0">
 
-
         <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
             android:id="@+id/swipeRefreshLayout"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            >
+            android:layout_height="match_parent">
 
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/videoView"
@@ -48,6 +36,5 @@
             android:visibility="invisible" />
     </RelativeLayout>
 
-    </androidx.cardview.widget.CardView>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

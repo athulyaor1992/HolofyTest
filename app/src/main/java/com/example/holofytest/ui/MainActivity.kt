@@ -2,7 +2,6 @@ package com.example.holofytest.ui
 
 import android.content.Intent
 import android.os.Bundle
-import android.util.Log
 import android.view.View
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.app.ActivityCompat
@@ -18,6 +17,7 @@ import com.example.holofytest.util.snackbar
 import com.example.holofytest.viewmodel.HolofyViewModel
 import com.google.android.exoplayer2.ui.AspectRatioFrameLayout
 import com.master.exoplayer.MasterExoPlayerHelper
+import kotlinx.android.synthetic.main.activity_detail.*
 import kotlinx.android.synthetic.main.activity_main.*
 
 
@@ -25,7 +25,7 @@ open class MainActivity : AppCompatActivity(), HolofyVideoAdapter.CellClickListe
 
     private lateinit var viewModel: HolofyViewModel
     private lateinit var adapter: HolofyVideoAdapter
-    lateinit var masterExoPlayerHelper: MasterExoPlayerHelper
+    private lateinit var masterExoPlayerHelper: MasterExoPlayerHelper
 
     public override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -35,7 +35,6 @@ open class MainActivity : AppCompatActivity(), HolofyVideoAdapter.CellClickListe
 
         setupUI()
         setupObservers()
-
 
     }
 
@@ -91,26 +90,17 @@ open class MainActivity : AppCompatActivity(), HolofyVideoAdapter.CellClickListe
 
     override fun onCellClickListener(data: Videos) {
 
-        val intent = Intent (this@MainActivity, DetailActivity::class.java)
-        intent.putExtra("videoList", data)
-        startActivity(intent)
-
-       /* // Ordinary Intent for launching a new activity
         val intent = Intent(this@MainActivity, DetailActivity::class.java)
         intent.putExtra("videoList", data)
-        // Get the transition name from the string
         val transitionName = getString(R.string.transition_string)
 
-        // Define the view that the animation will start from
         val viewStart = findViewById<View>(R.id.card_view)
         val options = ActivityOptionsCompat.makeSceneTransitionAnimation(
             this@MainActivity,
             viewStart,  // Starting view
             transitionName // The String
         )
-        //Start the Intent
         ActivityCompat.startActivity(this@MainActivity, intent, options.toBundle())
-        */
     }
 
 }
